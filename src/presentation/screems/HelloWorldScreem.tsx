@@ -1,10 +1,14 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native';
 
-export const HelloWorldScreem = () => {
+interface Props {
+    name?: string,
+}
+
+export const HelloWorldScreem = ({ name = "World" }: Props) => {
   return (
     <View style={ styles.container }>
-        <Text style={ styles.title }>Hello World</Text>
+        <Text numberOfLines={ 1 } ellipsizeMode='tail' style={ styles.title }>Hello { name }</Text>
     </View>
   )
 }
